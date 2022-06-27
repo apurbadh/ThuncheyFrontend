@@ -1,8 +1,6 @@
-
-function Navbar(props) {
-
+function Navbar() 
+{
 
 }
-
 
 export default Navbar;

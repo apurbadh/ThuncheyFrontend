@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './pages/Home/Home'
 import Navbar from './components/Navbar/Navbar'
 import { getUser } from "./scripts/user"
-import { Spinner } from '@chakra-ui/react'
 
 function App() {
   
@@ -25,7 +24,7 @@ function App() {
     <div className="App">
       <Navbar user={user}/>
 
-      { user == null ? <Spinner className='spinner' thickness='10px' speed='0.65s'/>:
+      { user == null ? "Loading....":
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home/>}/>
