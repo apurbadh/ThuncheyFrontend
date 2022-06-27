@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './pages/Home/Home'
 import Navbar from './components/Navbar/Navbar'
 import { getUser } from "./scripts/user"
+import { Spinner } from '@chakra-ui/react'
 
 function App() {
   
@@ -14,18 +15,23 @@ function App() {
     setUser(user)
   }
 
+
   useEffect(() => {
     checkLogin()
+    
   }, [])
 
   return (
     <div className="App">
       <Navbar user={user}/>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-        </Routes>
-      </BrowserRouter>
+
+      { user == null ? <Spinner className='spinner' thickness='10px' speed='0.65s'/>:
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+          </Routes>
+        </BrowserRouter>
+    }
     </div>
   )
 }

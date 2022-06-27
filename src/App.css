@@ -1,0 +1,12 @@
+.App{
+    height: 100%;
+    width: 100%;
+}
+
+
+.spinner{
+    padding: 3%;
+    top: 35%;
+    left: 45%;
+    position: absolute;
+}
