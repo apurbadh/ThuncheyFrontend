@@ -2,6 +2,7 @@ import './App.css'
 import { useState, useEffect } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './pages/Home'
+import Navbar from './components/Navbar'
 import { getUser } from "./scripts/user"
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar user={user}/>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home/>}/>
